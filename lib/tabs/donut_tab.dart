@@ -15,8 +15,10 @@ class DonutTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       //Cómo se va a distribuir
-      gridDelegate:
-          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //Tuve que agregar el childAspectRatio para que pueda verse completa toda la informacion
+          crossAxisCount: 2,
+          childAspectRatio: 0.7),
       //Qué elementos tendrá
       itemBuilder: (context, index) {
         return DonutTile(

@@ -51,11 +51,51 @@ class DonutTile extends StatelessWidget {
             ),
             //imagen
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 12),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 5),
               child: Image.asset(imageName),
-            )
+            ),
             //Tarea:texto del sabor del producto con la tienda
+            Text(
+              donutFlavor,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            const Text(
+              "Donkin's",
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.grey,
+              ),
+            ),
             //Tarea:Iconos de "Me encanta" y "Agregar"
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Icono de like
+                  Icon(
+                    Icons.favorite_border,
+                    size: 25,
+                    color: Colors.black,
+                  ),
+                  SizedBox(width: 4), // Espacio entre elementos
+                  // Texto
+                  Text(
+                    "Add",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
