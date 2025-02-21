@@ -28,17 +28,17 @@ class _HomePageState extends State<HomePage> {
     //Smootie Tab
     const MyTab(
       iconPath: 'lib/icons/smoothie.png',
-      tabName: 'Smoothie',
+      tabName: 'Smoothies',
     ),
     //Pancake Tab
     const MyTab(
       iconPath: 'lib/icons/pancakes.png',
-      tabName: 'Pancake',
+      tabName: 'Pancakes',
     ),
     //Pizza Tab
     const MyTab(
       iconPath: 'lib/icons/pizza.png',
-      tabName: 'Pizza',
+      tabName: 'Pizzas',
     )
   ];
   @override
