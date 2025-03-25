@@ -13,13 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-          useMaterial3: true,
-          tabBarTheme: const TabBarTheme(
-            //Cambia el color del indicardor de los tabs
-            indicatorColor: Colors.pink,
-          )),
+      title: 'Donut App',
+      theme: ThemeData(),
       home: const HomePage(title: 'Flutter Demo Home Page'),
     );
   }

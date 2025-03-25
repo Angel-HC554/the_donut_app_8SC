@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:donut_app_8sc/utils/donutTile.dart';
 
-class BurgerTab extends StatelessWidget {
+class BurguerTab extends StatelessWidget {
+  final Function(double, String) onAddToCart;
   //Lista de donas
   final List donutsOnSale = [
     //[donutFlavor, donutPrice, donutColor, imageName]
@@ -14,15 +15,18 @@ class BurgerTab extends StatelessWidget {
     ["Bacon Burguer", "60", Colors.blue, "lib/images/bacon_burguer.png"],
     ["Spicy Burguer", "55", Colors.red, "lib/images/spicy_burguer.jpg"],
   ];
-  BurgerTab({super.key});
+  BurguerTab({super.key, required this.onAddToCart});
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
       //Cómo se va a distribuir
+      padding: const EdgeInsets.all(12),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           //Tuve que agregar el childAspectRatio para que pueda verse completa toda la informacion
           crossAxisCount: 2,
-          childAspectRatio: 0.7),
+          childAspectRatio: 1 / 1.5,
+          mainAxisSpacing: 12,
+          crossAxisSpacing: 12),
       //Qué elementos tendrá
       itemBuilder: (context, index) {
         return DonutTile(
@@ -30,6 +34,8 @@ class BurgerTab extends StatelessWidget {
           donutPrice: donutsOnSale[index][1],
           donutColor: donutsOnSale[index][2],
           imageName: donutsOnSale[index][3],
+          onTap: () => onAddToCart(
+              double.parse(donutsOnSale[index][1]), donutsOnSale[index][0]),
         );
       },
       //Cuántos elementos

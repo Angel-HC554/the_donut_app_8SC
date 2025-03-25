@@ -5,16 +5,19 @@ class DonutTile extends StatelessWidget {
   final String donutPrice;
   final dynamic donutColor;
   final String imageName;
+  final VoidCallback onTap;
 
   //valor fijo del borde circular
   final double borderRadius = 24;
 
-  const DonutTile(
-      {super.key,
-      required this.donutFlavor,
-      required this.donutPrice,
-      this.donutColor,
-      required this.imageName});
+  const DonutTile({
+    super.key,
+    required this.donutFlavor,
+    required this.donutPrice,
+    this.donutColor,
+    required this.imageName,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,21 +35,20 @@ class DonutTile extends StatelessWidget {
               children: [
                 Container(
                   decoration: BoxDecoration(
-                      color: donutColor[100],
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(borderRadius),
-                          topRight: Radius.circular(borderRadius))),
+                    color: donutColor[100],
+                    borderRadius: BorderRadius.circular(borderRadius),
+                  ),
                   padding:
                       const EdgeInsets.symmetric(vertical: 8, horizontal: 18),
                   child: Text(
                     '\$$donutPrice',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      fontSize: 18,
+                      fontSize: 16,
                       color: donutColor[800],
                     ),
                   ),
-                )
+                ),
               ],
             ),
             //imagen
@@ -77,20 +79,16 @@ class DonutTile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // Icono de like
-                  Icon(
-                    Icons.favorite_border,
-                    size: 25,
-                    color: Colors.black,
-                  ),
-                  SizedBox(width: 4), // Espacio entre elementos
-                  // Texto
-                  Text(
-                    "Add",
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                      decoration: TextDecoration.underline,
+                  Icon(Icons.favorite, color: Colors.pink[400]),
+                  GestureDetector(
+                    onTap: onTap,
+                    child: Text(
+                      "Add",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        decoration: TextDecoration.underline,
+                      ),
                     ),
                   ),
                 ],
