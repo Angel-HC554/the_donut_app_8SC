@@ -1,4 +1,5 @@
 //import 'package:donnut_app/tabs/actualizar_tab.dart';
+import 'package:donut_app_8sc/tabs/actualizar_tab.dart';
 import 'package:flutter/material.dart';
 //Pagina de perfil con una imagen de perfil sin posibilidad de modificar
 
@@ -43,10 +44,11 @@ class ProfileTab extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         // Aquí se envia a la página para actualizar la contraseña
-                        //Navigator.push(
-                        //context,
-                        //MaterialPageRoute(builder: (context) => ActualizarTab()),
-                        //);
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => UpdatePasswordPage()),
+                        );
                       },
                       child: Text('Actualizar Contraseña'),
                     ),
