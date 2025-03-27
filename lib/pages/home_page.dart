@@ -7,6 +7,7 @@ import '../tabs/smoothie_tab.dart';
 import '../tabs/burger_tab.dart';
 import '../tabs/pancake_tab.dart';
 import '../utils/cart_manager.dart';
+import '../tabs/profiletab.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key, required String title});
@@ -262,7 +263,14 @@ class _HomePageState extends State<HomePage> {
                   Icons.person,
                   color: Colors.grey[800],
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfileTab(),
+                    ),
+                  );
+                },
               ),
             ),
           ],
@@ -375,6 +383,14 @@ class _HomePageState extends State<HomePage> {
               ListTile(
                 leading: const Icon(Icons.person),
                 title: const Text('Perfil'),
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ProfileTab(),
+                    ),
+                  );
+                },
               ),
               ListTile(
                 leading: const Icon(Icons.home),
